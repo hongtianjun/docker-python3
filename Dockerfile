@@ -13,18 +13,7 @@ RUN apk update && apk add --no-cache \
         pcre-dev \
         libffi-dev \
 		mariadb-dev \
-	&& pip install --no-cache-dir -U django djangorestframework Flask requests mysqlclient \
-    && apk del \
-        gcc \
-        libc-dev \
-        linux-headers \
-        libffi-dev \
-        pcre-dev \
-        mariadb-dev \
-        zlib-dev \
-        libressl-dev \
-        mariadb-dev \
+	&& pip install --no-cache-dir -U django djangorestframework Flask requests mysqlclient six \
     && rm -rf /tmp/*
-
-
+    
 CMD ["python"]
